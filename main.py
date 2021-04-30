@@ -10,24 +10,23 @@ scorer2 = 'Marco van Basten'
 goal_0 = 32
 goal_1 = 54
 # scorers en minuten waarin de doelpunten vielen samen:
-scorers = f'{scorer1} + {goal_0}, {scorer2} + {goal_1}'
+scorers = (scorer1) + " " + str(goal_0) + ", " + (scorer2) + " " + str(goal_1)
 # wie scoorde wanneer in 2 strings
 report = f'{scorer1} scored in the {goal_0}nd minute\n{scorer2} scored in the {goal_1}th minute'
 # second part of the exercise
 # define player
 player = 'Hans van Breukelen'
 # use slicing to isolate the first name of the player
-first_name = player [:4]
-# define the length of the last name, using 'len'
-# 4 plus a space gives 5 till the end of the name, wich should provide us with the length of the last name
-last_name_len = len(player[5:])
-#define players name in short
-name_short = 'H. van Breukelen'
-chant = f'{first_name}!'  * 4
+first_name = player[0:player.find(" ")]
+print(first_name)
+# define the length of the last name, using 'len', slicing and find
+last_name_len = len(player[player.find(" "):])
+#define players name in short: index0 + 
+name_short = player[0:1] + '.' + player[player.find(' '): len(player)]
+chant = f'{first_name}! '  * len(player[0:player.find(" ")])
 print(chant)
-# still not possible to seperate the name or add exclamationmark
-good_chant = chant
-good_chant != chant
+good_chant = (chant != f'{first_name}! '  * len(player[0:player.find(" ")]) + ' ')
+print(good_chant)
 # I still don't know what to do here, what is asked.
 
 
